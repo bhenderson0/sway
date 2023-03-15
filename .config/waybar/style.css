@@ -103,6 +103,10 @@ button:hover {
     margin: 0 4px;
 }
 
+#custom-power {
+    padding: 5 10px;
+}
+
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;
@@ -115,6 +119,7 @@ button:hover {
 
 #clock {
     background-color: @n3;
+    border-radius: 12px;
 }
 
 @keyframes blink {
@@ -131,14 +136,17 @@ label:focus {
 #cpu {
     background-color: @n9;
     color: #000000;
+    border-radius: 12px;
 }
 
 #memory {
     background-color: @n10;
+    border-radius: 12px;
 }
 
 #disk {
     background-color: #964B00;
+    border-radius: 12px;
 }
 
 #backlight {
@@ -148,43 +156,52 @@ label:focus {
 #network {
     color: #000000;
     background-color: @n14;
+    border-radius: 12px;
 }
 
 #network.disconnected {
     background-color: @n11;
+    border-radius: 12px;
 }
 
 #pulseaudio {
     background-color: @n8;
     color: #000000;
+    border-radius: 12px;
 }
 
 #pulseaudio.muted {
     background-color: #90b1b1;
     color: #2a5c45;
+    border-radius: 12px;
 }
 
 #wireplumber {
     background-color: #fff0f5;
     color: #000000;
+    border-radius: 12px;
 }
 
 #wireplumber.muted {
     background-color: #f53c3c;
+    border-radius: 12px;
 }
 
 #custom-media {
     background-color: #66cc99;
     color: #2a5c45;
     min-width: 100px;
+    border-radius: 12px;
 }
 
 #custom-media.custom-spotify {
     background-color: #66cc99;
+    border-radius: 12px;
 }
 
 #custom-media.custom-vlc {
     background-color: #ffa000;
+    border-radius: 12px;
 }
 
 #temperature {
@@ -196,7 +213,8 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    background-color: @n10;
+    border-radius: 12px;
 }
 
 #tray > .passive {
