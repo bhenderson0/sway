@@ -1,13 +1,13 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 28, // Waybar height (to be removed for auto height)
+    "height": 32, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media", "wlr/taskbar"],
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "wlr/taskbar"],
     "modules-center": ["clock"],
-    "modules-right": ["mpd", "pulseaudio", "network", "cpu", "memory", "temperature", "tray", "custom/power", "idle_inhibitor"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "tray", "custom/power", "idle_inhibitor"],
     // Modules configuration
     "custom/power": {
         "format":"⏻",
@@ -39,42 +39,10 @@
     },
     "wlr/taskbar": {
         "format": "{icon}",
-        "icon-size": 14,
+        "icon-size": 18,
         "icon-theme": "Papirus-Dark",
-        "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close",
-        "ignore-list": [
-           "foot"
-        ],
-        "app_ids-mapping": {
-          "firefoxdeveloperedition": "firefox-developer-edition"
-        }
-    },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
-        }, "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -96,10 +64,12 @@
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "gnome-system-monitor"
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% ",
+        "on-click": "gnome-system-monitor"
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -120,7 +90,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
+        "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
@@ -137,17 +107,5 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
 }
 

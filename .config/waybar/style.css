@@ -1,12 +1,7 @@
 @define-color bg #2e3440;
 @define-color light #eceff4;
 @define-color n3 #4c566a;
-@define-color n7 #8fbcbb;
-@define-color n8 #88c0d0;
-@define-color n9 #81a1c1;
-@define-color n10 #5e81ac;
-@define-color n11 #bf616a;
-@define-color n14 #a3be8c;
+@define-color n2 #434c5e;
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
@@ -73,6 +68,11 @@ button:hover {
     background-color: #eb4d4b;
 }
 
+#taskbar button.active {
+    background: @n3;
+    box-shadow: inset 0 -3px @light;
+}
+
 #mode {
     background-color: #64727D;
     border-bottom: 3px solid @light;
@@ -118,7 +118,7 @@ button:hover {
 }
 
 #clock {
-    background-color: @n3;
+    background-color: @n2;
     border-radius: 12px;
 }
 
@@ -134,19 +134,15 @@ label:focus {
 }
 
 #cpu {
-    background-color: @n9;
-    color: #000000;
-    border-radius: 12px;
+    color: @light
 }
 
 #memory {
-    background-color: @n10;
-    border-radius: 12px;
+    color: @light
 }
 
 #disk {
-    background-color: #964B00;
-    border-radius: 12px;
+    color: @light
 }
 
 #backlight {
@@ -154,24 +150,19 @@ label:focus {
 }
 
 #network {
-    color: #000000;
-    background-color: @n14;
     border-radius: 12px;
 }
 
 #network.disconnected {
-    background-color: @n11;
     border-radius: 12px;
 }
 
 #pulseaudio {
-    background-color: @n8;
-    color: #000000;
+    color: @light;
     border-radius: 12px;
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
     color: #2a5c45;
     border-radius: 12px;
 }
@@ -213,7 +204,6 @@ label:focus {
 }
 
 #tray {
-    background-color: @n10;
     border-radius: 12px;
 }
 
