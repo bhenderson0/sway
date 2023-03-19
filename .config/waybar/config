@@ -1,17 +1,25 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 32, // Waybar height (to be removed for auto height)
+    "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "wlr/taskbar"],
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "wlr/taskbar", "sway/window"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "tray", "custom/power", "idle_inhibitor"],
+    "modules-right": ["custom/weather", "pulseaudio", "network", "cpu", "memory", "tray", "custom/power", "idle_inhibitor"],
     // Modules configuration
     "custom/power": {
         "format":"⏻",
         "on-click": "exec ~/.config/waybar/scripts/power-menu.sh",
+    },
+    "custom/weather": {
+        // Todo: Add tooltip
+        "format": "{}",
+        "interval": 30000,
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/wttr.py",
+        "on-click": "exec gnome-weather"
     },
     "sway/workspaces": {
         "disable-scroll": true,
@@ -25,7 +33,7 @@
         "format-icons": {
             "locked": "",
             "unlocked": ""
-        }
+        },
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
