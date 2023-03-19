@@ -1,0 +1,1 @@
+for_window [app_id="pavucontrol" ] floating enable, resize set width 40 ppt height 30 ppt

@@ -1,0 +1,10 @@
+gaps inner 2
+gaps outer 2
+default_border pixel 2
+smart_borders on
+client.focused          #D3D3D3 #D3D3D3 #1E1E1E #D3D3D3   #D3D3D3
+client.focused_inactive #3A3A3A #3A3A3A #E4E4E4 #3A3A3A   #3A3A3A
+client.unfocused        #2F2F2F #2F2F2F #E4E4E4 #2F2F2F   #2F2F2F
+client.urgent           #E01B24 #E01B24 #E4E4E4 #E01B24   #E01B24
+client.placeholder      #282A36 #282A36 #E4E4E4 #282A36   #282A36
+client.background       #F8F8F2
