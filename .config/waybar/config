@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "wlr/taskbar", "sway/window"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/weather", "pulseaudio", "network", "cpu", "memory", "tray", "custom/power", "idle_inhibitor"],
+    "modules-right": ["custom/weather", "pulseaudio", "cpu", "memory", "tray", "network", "custom/power", "idle_inhibitor"],
     // Modules configuration
     "custom/power": {
         "format":"⏻",
@@ -16,7 +16,7 @@
     "custom/weather": {
         // Todo: Add tooltip
         "format": "{}",
-        "interval": 30000,
+        "interval": 1800,
         "return-type": "json",
         "exec": "~/.config/waybar/scripts/wttr.py",
         "on-click": "exec gnome-weather"
@@ -68,7 +68,7 @@
         "timezone": "America/Toronto",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}",
-        "format": "{:%r}"
+        "format": "{:%b %d %r}"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -89,9 +89,9 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        // "format-wifi": "{essid} ({signalStrength}%) ", I don't have WiFi currently
+        "format-ethernet": "",
+        "tooltip-format": "{ipaddr}/{cidr} {ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
