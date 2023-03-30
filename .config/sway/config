@@ -17,6 +17,7 @@ set $right l
 exec --no-startup-id wlsunset -l 43.7 -L -79.4
 set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
 exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
+exec "/usr/libexec/polkit-gnome-authentication-agent-1"
 # Your preferred terminal emulator
 set $term foot
 # Your preferred application launcher
