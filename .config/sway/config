@@ -206,6 +206,12 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #
+# Screenshots
+#
+    bindsym print exec grimshot save output
+    bindsym Shift+print exec ~/.config/sway/scripts/grimshot.sh
+
+#
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
